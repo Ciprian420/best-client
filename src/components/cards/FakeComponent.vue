@@ -4,10 +4,10 @@
 
 <script>
 export default {
-  name: 'Faq-page'
+  name: "FakeComponent"
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
