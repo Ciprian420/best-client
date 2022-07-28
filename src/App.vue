@@ -1,6 +1,13 @@
 <template>
-  <router-view></router-view>
+  <main>
+  <router-view>
+
+  </router-view>
+</main>
 </template>
+
+<script>
+</script>
 
 <style>
 * {
@@ -33,9 +40,4 @@ ul, li {
   list-style: none;
 }
 </style>
-<script>
 
-export default {
-
-}
-</script>

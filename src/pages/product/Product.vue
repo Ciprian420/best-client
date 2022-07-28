@@ -3,7 +3,7 @@
     <div class="product-container">
       <div class="product-image-container">
         <div class="image-background">
-          <img src="../../assets/Images/product-image.png" alt="" class="product-image">
+          <img src="../../img/product-image.png" alt="" class="product-image">
         </div>
       </div>
       <div class="product-info-container">
@@ -21,24 +21,24 @@
         </div>
         <div class="buttons">
           <button class="add-to-cart-button waves-effect waves-light btn">Добавить в корзину</button>
-          <button class="add-to-fav-button waves-effect waves-light btn"><img src="../../assets/Images/fav-icon.png" alt="" class="fav-icon"></button>
-          <button class="compare-button waves-effect waves-light btn"><img src="../../assets/Images/compare-icon.png" alt="" class="compare-icon"></button>
+          <button class="add-to-fav-button waves-effect waves-light btn"><img src="../../img/fav-icon.png" alt="" class="fav-icon"></button>
+          <button class="compare-button waves-effect waves-light btn"><img src="../../img/compare-icon.png" alt="" class="compare-icon"></button>
         </div>
       </div>
     </div>
     <div class="offers">
       <div class="first-offer">
-        <img src="../../assets/Images/firstoffer.png" alt="" class="first-offer-photo">
+        <img src="../../img/firstoffer.png" alt="" class="first-offer-photo">
         <p>Бесплатная
           доставка от 1000 руб</p>
       </div>
       <div class="second-offer">
-        <img src="../../assets/Images/secondoffer.png" alt="" class="second-offer-photo" >
+        <img src="../../img/secondoffer.png" alt="" class="second-offer-photo" >
         <p>Доставка по всей
           территории РФ</p>
       </div>
       <div class="third-offer">
-        <img src="../../assets/Images/thirdoffer.png" alt="" class="third-offer-photo">
+        <img src="../../img/thirdoffer.png" alt="" class="third-offer-photo">
         <p>Гарантия качества
           продукции </p>
       </div>
@@ -48,12 +48,10 @@
 </template>
 
 <script>
-import ProductDescription from "@/pages/product/ProductDescription";
+import ProductDescription from "./ProductDescription";
 export default {
   name: "ProductPage",
-  components: {
-    ProductDescription
-  }
+  components: {ProductDescription}
 }
 
 </script>

@@ -28,12 +28,12 @@
 
   <div class="product-info">
     <div class="product-info-titles">
-      <p style="color: #AFAFAF; font-size: 16px;">Вид ухода</p>
-      <p style="color: #AFAFAF; font-size: 16px;">Эффект</p>
-      <p style="color: #AFAFAF; font-size: 16px;">Вес</p>
-      <p style="color: #AFAFAF; font-size: 16px;">Объем</p>
-      <p style="color: #AFAFAF; font-size: 16px;">Страна производитель</p>
-      <p style="color: #AFAFAF; font-size: 16px;">Тип волос</p>
+      <p class="custom-text">Вид ухода</p>
+      <p class="custom-text">Эффект</p>
+      <p class="custom-text">Вес</p>
+      <p class="custom-text">Объем</p>
+      <p class="custom-text">Страна производитель</p>
+      <p class="custom-text">Тип волос</p>
     </div>
     <div class="product-info-description">
       <p>Для домашнего ухода, Для косметологов</p>
@@ -53,6 +53,9 @@ export default {
 </script>
 
 <style scoped>
+.custom-text{
+  color: #AFAFAF; font-size: 16px
+}
 .offers{
   display: flex;
   flex-direction: row;
@@ -92,6 +95,8 @@ p{
   font-size: 16px;
   line-height: 150%;
   color: #000000;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .description-container{
   margin-left: 50px;
@@ -99,6 +104,7 @@ p{
 }
 .text-container{
   width: 70%;
+  margin-top: 30px;
 }
 .product-info{
   display: flex;

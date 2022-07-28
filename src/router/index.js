@@ -1,5 +1,4 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-
 const routes = [
   {
     path: '/',
@@ -15,13 +14,8 @@ const routes = [
       { path: '/faq', component: () => import('@/pages/faq/Faq.vue')},
       { path: '/user-profile', component: () => import('@/pages/profile/Profile.vue')}
     ]
-  },
-  {
-    path: '/order',
-    name: 'order',
-    component: () => import('@/pages/order/Order.vue')
-  },
-]
+  }
+  ]
 
 const router = createRouter({
   history: createWebHashHistory(),

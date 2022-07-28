@@ -7,7 +7,6 @@
           <div class="category-container">
             <p class="adress-category">Населенный пункт</p>
             <p class="adress-description">г. Красноярск Красноярский край</p>
-
           </div>
           <button class="city-change-btn waves-effect waves-light btn">Изменить город</button>
           <div class="category-container">
@@ -82,7 +81,7 @@
         </div>
         <p class="step-three">Оплата</p>
         <p class="instruction">бесконтактная доставка действует для всех заказов, оплаченных онлайн</p>
-        <div class="category-container move-to-right">
+        <div class="pay-method-container move-to-right">
           <div class="delivery-select active center">
             <img src="../../assets/Images/card-icon.png" alt="">
           </div>
@@ -90,92 +89,71 @@
             <img src="../../assets/Images/gpay.png" alt="">
           </div>
           <div class="delivery-select center">
-            <p style="font-family: 'Roboto', sans-serif;
-              font-weight: 500;
-              font-size: 20px">при получении</p>
+            <p >при получении</p>
           </div>
         </div>
-        <p class="instruction" style="margin-top: 50px; width: 594px">Оплата курьеру банковской картой или наличными.</p>
+        <p class="instruction">Оплата курьеру банковской картой или наличными.</p>
         <p class="instruction">Обратите внимание! Подарочные сертификаты и бонусы
           к оплате не принимаются.</p>
-        <button class="city-change-btn waves-effect waves-light btn" style="width: 500px;">Оформить заказ</button>
+        <button class="city-change-btn waves-effect waves-light btn" style="width: 300px;">Оформить заказ</button>
       </div>
       <div class="product-info-container">
         <div class="product-header">
           <p class="product-name">Ваш заказ / 1 шт.</p>
-          <p style="color: #828282; font-size: 19px; margin-top" class="product-name center">Доступно бонусов</p>
+          <p class="product-name center ">Доступно бонусов</p>
         </div>
-        <div class="image-background">
-          <img src="../../assets/Images/product-image.png" alt="" class="product-image">
-        </div>
-        <p style="color: #828282">Доступно бонусов</p>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="email" type="email" class="validate" style="width: 200px" placeholder="Введите сумму">
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="email" type="email" class="validate" style="width: 200px" placeholder="Введите промокод">
-          </div>
-        </div>
-        <div class="price">
-          <p style="color: #828282">Доступно бонусов</p>
-          <p >2600 руб</p>
-        </div>
-        <div class="delivery">
-          <p style="color: #828282">Доступно бонусов</p>
-          <p >Не выбрано</p>
-        </div>
-        <hr>
-        <p style="display: flex; justify-content: flex-end; font-size: 25px">2600 руб</p>
+        <OrderDescriptionCard></OrderDescriptionCard>
       </div>
     </div>
   </main>
 </template>
 
 <script>
+import OrderDescriptionCard from "@/pages/order/OrderDescriptionCard";
 export default {
-  name: "OrderConfirmation"
+  name: "OrderConfirmation",
+  components: {OrderDescriptionCard}
 }
 </script>
 
 <style scoped>
-.price, .delivery, .product-header{
+.pay-method-container{
+  display: flex;
+  flex-direction: row;
+  margin-top: 80px;
+  height: 200px;
+}
+.product-name{
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+.product-header{
   display: flex;
   justify-content: space-between;
-
 }
 .main-container{
   display: flex;
   flex-direction: row;
-}
-.move-to-right{
-  margin-left: 229px;
+  width: auto;
+  height: auto;
+  margin-left: 150px;
 }
 .center{
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.product-info-container{
-  margin-top: 100px;
-  margin-left: 333px;
-  width: 600px;
+.product-info-container{;
+  width: 500px;
+  margin-left: 100px;
 }
-.step-one, .step-two, .step-three, .product-name{
+.step-one, .step-two, .step-three{
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 25px;
+  font-size: 20px;
   line-height: 200%;
-  color: #000000;
   letter-spacing: 1px;
-  margin-top: 76px;
-}
-.product-image{
-  width: 100px;
-  height: 150px;
 }
 .step-one:before{
   content: "1 / 3 ";
@@ -189,23 +167,12 @@ export default {
   content: "3 / 3 ";
   margin-right: 30px;
 }
-.order-and-adress{
-  margin-top: 100px;
-  margin-left: 333px;
-}
-.image-background{
-  background-color: #F3F3F3;
-  width: 200px;
-  height: 170px;
-  display: flex;
-  justify-content: center;
-}
 .adress-category, .adress-description{
   display: flex;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 150%;
   margin-right: 50px;
   width: 166px;
@@ -230,7 +197,7 @@ export default {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 150%;
   margin-left: 30px;
 }
@@ -238,9 +205,8 @@ export default {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 13px;
   line-height: 150%;
-  color: black;
   margin-left: 30px;
 }
 .active{
@@ -253,7 +219,7 @@ export default {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 150%;
   color: #000000;
   margin-left: 215px;
@@ -269,7 +235,7 @@ export default {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 13px;
   line-height: 150%;
   justify-content: center;
   margin-top: 5px;
@@ -287,9 +253,10 @@ export default {
   font-family:  'Roboto', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 13px;
   line-height: 150%;
   margin-left: 230px;
+
 }
 .input-container{
   display: flex;
