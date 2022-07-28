@@ -1,4 +1,5 @@
 <template>
+  <product-page></product-page>
 </template>
 
 <style>
@@ -34,7 +35,9 @@ ul, li {
 </style>
 <script>
 
-export default {
 
+import ProductPage from "@/pages/ProductPage";
+export default {
+  components: {ProductPage}
 }
 </script>
