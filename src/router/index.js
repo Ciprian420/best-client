@@ -12,7 +12,9 @@ const routes = [
       { path: '/club', component: () => import('@/pages/club/Club.vue')},
       { path: '/contacts', component: () => import('@/pages/contacts/Contacts.vue')},
       { path: '/faq', component: () => import('@/pages/faq/Faq.vue')},
-      { path: '/user-profile', component: () => import('@/pages/profile/Profile.vue')}
+      { path: '/user-profile', component: () => import('@/pages/profile/Profile.vue')},
+      {path: '/order', component: () => import('@/pages/order/Order')},
+      {path: '/wishList', component: () => import('@/pages/wishList/WishList')}
     ]
   }
   ]
