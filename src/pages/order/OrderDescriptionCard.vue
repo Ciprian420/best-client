@@ -5,10 +5,8 @@
   <div class="row">
     <div class="input-field col s12">
       <input id="email" type="email" class="validate" style="width: 200px" placeholder="Введите сумму">
-    </div>
   </div>
   <div class="row">
-    <div class="input-field col s12">
       <input id="email" type="email" class="validate" style="width: 200px" placeholder="Введите промокод">
     </div>
   </div>
