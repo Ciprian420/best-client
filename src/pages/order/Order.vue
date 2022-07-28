@@ -83,10 +83,10 @@
         <p class="instruction">бесконтактная доставка действует для всех заказов, оплаченных онлайн</p>
         <div class="pay-method-container move-to-right">
           <div class="delivery-select active center">
-            <img src="../../assets/Images/card-icon.png" alt="">
+            <img :src="require('@/assets/images/card-icon.png')" alt="">
           </div>
           <div class="delivery-select center">
-            <img src="../../assets/Images/gpay.png" alt="">
+            <img :src="require('@/assets/images/gpay.png')" alt="">
           </div>
           <div class="delivery-select center">
             <p >при получении</p>

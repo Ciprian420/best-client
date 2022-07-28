@@ -30,7 +30,7 @@ export default {
   data() {
     return {
       productInfo: {
-        imgURL: require("../img/product-image.png"),
+        imgURL: require("@/assets/images/product-image.png"),
         price: "2600 руб"
       }
     }

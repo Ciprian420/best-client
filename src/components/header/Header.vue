@@ -11,16 +11,16 @@
     <nav class="main-header-nav">
       <div class="container main-header-nav-inner">
         <div class="main-header-links">
-          <div class="main-header-logo"><a href="#"><img src="@/assets/Images/logo.png" alt=""></a></div>
+          <div class="main-header-logo"><a href="#"><img src="@/assets/images/logo.png" alt=""></a></div>
           <ul class="main-header-menu">
             <li v-for="(item, index) in menuLinks" :key="index"  @click="index === 0 ? showPopup = !showPopup : ''">{{item}}</li>
           </ul>
         </div>
         <ul class="main-header-buttons">
-          <li><img src="@/assets/Images/search-icon.png" alt=""></li>
-          <li><img src="@/assets/Images/heart-icon.png" alt=""></li>
-          <li><img src="@/assets/Images/basket-icon.png" alt=""></li>
-          <li><img src="@/assets/Images/profile-icon.png" alt=""></li>
+          <li><img src="@/assets/images/search-icon.png" alt=""></li>
+          <li><img src="@/assets/images/heart-icon.png" alt=""></li>
+          <li><img src="@/assets/images/basket-icon.png" alt=""></li>
+          <li><img src="@/assets/images/profile-icon.png" alt=""></li>
         </ul>
       </div>
     </nav>

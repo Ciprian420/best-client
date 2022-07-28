@@ -3,14 +3,14 @@
         <div class="auction-slider-top">
             <h3 class="auction-slider-title">Акционные товары</h3>
             <div class="auction-slider-arrows">
-                <div @click="$refs.carousel.goToPrev()" class="auction-slider-prev"><img src="@/assets/Images/arrow.png" alt=""></div>
-                <div @click="$refs.carousel.goToNext()" class="auction-slider-next"><img src="@/assets/Images/arrow.png" alt=""></div>
+                <div @click="$refs.carousel.goToPrev()" class="auction-slider-prev"><img src="@/assets/images/arrow.png" alt=""></div>
+                <div @click="$refs.carousel.goToNext()" class="auction-slider-next"><img src="@/assets/images/arrow.png" alt=""></div>
             </div>
         </div>
         <agile ref="carousel" :slidesToShow="1" :infinite="false" :navButtons="false" :dots="false">
             <div class="auction-slider-item" v-for="(item, index) in 8" :key="index">
                 <div class="auction-slider-card">
-                    <div class="auction-slider-item-img"><img src="@/assets/Images/product-2.png" alt=""></div>
+                    <div class="auction-slider-item-img"><img src="@/assets/images/product-2.png" alt=""></div>
                     <h4 class="auction-slider-item-title">R&B Black Food 3.7</h4>
                     <p class="auction-slider-item-subtitle">
                         Бальзам-ополаскиватель для волос с экстрактами 3 черных семян и 7 черных плодов
