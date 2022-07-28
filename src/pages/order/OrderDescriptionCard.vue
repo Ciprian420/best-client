@@ -30,7 +30,7 @@ export default {
   data() {
     return {
       productInfo: {
-        imgURL: require("../assets/Images/product-image.png"),
+        imgURL: require("../img/product-image.png"),
         price: "2600 руб"
       }
     }
@@ -63,7 +63,7 @@ export default {
 .price, .delivery{
   display: flex;
   justify-content: space-between;
-margin-top: 20px;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 .product-image{
