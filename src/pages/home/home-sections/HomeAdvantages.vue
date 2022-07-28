@@ -2,7 +2,7 @@
     <div class="advantages">
         <div class="container">
             <div class="advantages-content">
-                <div class="advantages-image"><img src="@/assets/Images/advantages-img.jpg" alt=""></div>
+                <div class="advantages-image"><img src="@/assets/images/advantages-img.jpg" alt=""></div>
                 <div class="advantages-info">
                     <h4 class="advantages-title">
                         Ведущий эксперт на российском рынке профессиональной косметики из Кореи—ККshop™

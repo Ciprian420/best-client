@@ -4,7 +4,7 @@
             <div class="footer-items">
                 <div class="footer-item">
                     <div class="footer-contacts">
-                        <div class="footer-logo"><img src="@/assets/Images/logo.png" alt=""></div>
+                        <div class="footer-logo"><img src="@/assets/images/logo.png" alt=""></div>
                         <a href="" class="footer-tel">{{phoneNumber}}</a>
                         <a href="" class="footer-email">{{email}}</a>
                         <p class="footer-address">{{address}}</p>
@@ -29,23 +29,23 @@
                         <div class="footer-item-social">
                             <h4 class="footer-item-title">Мы в социальных сетях</h4>
                             <ul class="footer-list-social">
-                                <li><a href=""><img src="@/assets/Images/telegram.png" alt=""></a></li>
-                                <li><a href=""><img src="@/assets/Images/ok.png" alt=""></a></li>
-                                <li><a href=""><img src="@/assets/Images/facebook.png" alt=""></a></li>
-                                <li><a href=""><img src="@/assets/Images/watsapp.png" alt=""></a></li>
-                                <li><a href=""><img src="@/assets/Images/viber.png" alt=""></a></li>
-                                <li><a href=""><img src="@/assets/Images/instagram.png" alt=""></a></li>
-                                <li><a href=""><img src="@/assets/Images/vk.png" alt=""></a></li>
+                                <li><a href=""><img src="@/assets/images/telegram.png" alt=""></a></li>
+                                <li><a href=""><img src="@/assets/images/ok.png" alt=""></a></li>
+                                <li><a href=""><img src="@/assets/images/facebook.png" alt=""></a></li>
+                                <li><a href=""><img src="@/assets/images/watsapp.png" alt=""></a></li>
+                                <li><a href=""><img src="@/assets/images/viber.png" alt=""></a></li>
+                                <li><a href=""><img src="@/assets/images/instagram.png" alt=""></a></li>
+                                <li><a href=""><img src="@/assets/images/vk.png" alt=""></a></li>
                             </ul>
                         </div>
                     </div>
                     <ul class="footer-pay-methods">
-                        <li><a href=""><img src="@/assets/Images/mir.png" alt=""></a></li>
-                        <li><a href=""><img src="@/assets/Images/googlePay.png" alt=""></a></li>
-                        <li><a href=""><img src="@/assets/Images/visa.png" alt=""></a></li>
-                        <li><a href=""><img src="@/assets/Images/webmoney.png" alt=""></a></li>
-                        <li><a href=""><img src="@/assets/Images/yandex.png" alt=""></a></li>
-                        <li><a href=""><img src="@/assets/Images/master-card.png" alt=""></a></li>
+                        <li><a href=""><img src="@/assets/images/mir.png" alt=""></a></li>
+                        <li><a href=""><img src="@/assets/images/googlePay.png" alt=""></a></li>
+                        <li><a href=""><img src="@/assets/images/visa.png" alt=""></a></li>
+                        <li><a href=""><img src="@/assets/images/webmoney.png" alt=""></a></li>
+                        <li><a href=""><img src="@/assets/images/yandex.png" alt=""></a></li>
+                        <li><a href=""><img src="@/assets/images/master-card.png" alt=""></a></li>
                     </ul>
                 </div>
             </div>

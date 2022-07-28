@@ -4,7 +4,7 @@
     <div class="title-and-profile-container">
       <div class="profile">
         <p class="user-name">Esther Howard</p>
-        <img src="@/assets/Images/profile-pic.png" alt="" class="profile-pic">
+        <img src="@/assets/images/profile-pic.png" alt="" class="profile-pic">
       </div>
       <div class="title-container">
         <p class="page-title">Мой лист пожеланий</p>
@@ -52,6 +52,7 @@ export default {
   font-weight: 700;
   font-size: 90px;
   margin-left:250px;
+  line-height: 60px;
 }
 .container{
   height: 1000px;
@@ -64,6 +65,7 @@ margin-top: 20px;
   font-size: 20px;
   line-height: 200%;
   color: #828282;
+  cursor: pointer;
 }
 .active{
   color: black;

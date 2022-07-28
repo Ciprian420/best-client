@@ -1,16 +1,16 @@
 <template>
   <main class="main">
     <div class="main-container">
-      <div class="order-and-adress">
-        <div class="adress">
+      <div class="order-and-address">
+        <div class="address">
           <p class="step-one">Адрес и доставка</p>
           <div class="category-container">
-            <p class="adress-category">Населенный пункт</p>
-            <p class="adress-description">г. Красноярск Красноярский край</p>
+            <p class="address-category">Населенный пункт</p>
+            <p class="address-description">г. Красноярск Красноярский край</p>
           </div>
           <button class="city-change-btn waves-effect waves-light btn">Изменить город</button>
           <div class="category-container">
-            <p class="adress-category"> Способ доставки</p>
+            <p class="address-category"> Способ доставки</p>
             <div class="delivery-select active">
               <p class="delivery-type">Курьер</p>
               <p class="delivery-info">Служба доставки</p>
@@ -23,12 +23,12 @@
             </div>
           </div>
           <div class="category-container">
-            <p class="adress-category">Адрес</p>
-            <p class="adress-description">г. Красноярск, ул. Республики, д. 33А, кв. 64</p>
+            <p class="address-category">Адрес</p>
+            <p class="address-description">г. Красноярск, ул. Республики, д. 33А, кв. 64</p>
           </div>
           <button class="city-change-btn waves-effect waves-light btn">Изменить адрес</button>
           <div class="category-container">
-            <p class="adress-category">Дата и время</p>
+            <p class="address-category">Дата и время</p>
             <div class="date-and-time">
               <div class="day-of-the-week active">
                 <p class="day">Пн</p>
@@ -56,7 +56,7 @@
         </div>
         <p class="step-two">Получатель</p>
         <div class="category-container">
-          <p class="adress-category">Ваши данные</p>
+          <p class="address-category">Ваши данные</p>
           <div class="input-container">
             <div class="input-field col s6">
               <input id="first_name" type="text" class="validate" placeholder="First Name">
@@ -67,7 +67,7 @@
           </div>
         </div>
         <div class="category-container">
-          <p class="adress-category">Ваши данные</p>
+          <p class="address-category">Ваши данные</p>
           <div class="input-container">
             <div class="input-field col s6">
               <input id="icon_telephone" type="tel" class="validate" style="width: 300px" placeholder="Telephone">
@@ -83,10 +83,10 @@
         <p class="instruction">бесконтактная доставка действует для всех заказов, оплаченных онлайн</p>
         <div class="pay-method-container move-to-right">
           <div class="delivery-select active center">
-            <img src="@/assets/Images/card-icon.png" alt="">
+            <img :src="require('@/assets/images/card-icon.png')" alt="">
           </div>
           <div class="delivery-select center">
-            <img src="@/assets/Images/gpay.png" alt="">
+            <img :src="require('@/assets/images/gpay.png')" alt="">
           </div>
           <div class="delivery-select center">
             <p >при получении</p>
@@ -167,7 +167,7 @@ export default {
   content: "3 / 3 ";
   margin-right: 30px;
 }
-.adress-category, .adress-description{
+.address-category, .address-description{
   display: flex;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
@@ -178,7 +178,7 @@ export default {
   width: 166px;
   height: 54px;
 }
-.adress-description{
+.address-description{
   font-weight: 500!important;
   width: 250px!important;
 }

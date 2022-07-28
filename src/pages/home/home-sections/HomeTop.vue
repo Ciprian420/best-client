@@ -20,7 +20,7 @@ export default {
 .top {
     height: 698px;
     padding-top: 90px;
-    background-image: url('@/assets/Images/top-bg.jpg');
+    background-image: url('@/assets/images/top-bg.jpg');
     background-size: cover;
     margin-bottom: 68px;
 }

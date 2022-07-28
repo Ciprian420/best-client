@@ -3,14 +3,14 @@
         <div class="slider-top">
             <h3 class="slider-title">Новинки</h3>
             <div class="slider-arrows">
-                <div @click="$refs.carousel.goToPrev()" class="slider-prev"><img src="@/assets/Images/arrow.png" alt=""></div>
-                <div @click="$refs.carousel.goToNext()" class="slider-next"><img src="@/assets/Images/arrow.png" alt=""></div>
+                <div @click="$refs.carousel.goToPrev()" class="slider-prev"><img src="@/assets/images/arrow.png" alt=""></div>
+                <div @click="$refs.carousel.goToNext()" class="slider-next"><img src="@/assets/images/arrow.png" alt=""></div>
             </div>
         </div>
         <agile ref="carousel" :slidesToShow="4" :infinite="false" :navButtons="false" :dots="false">
             <div class="slider-item" v-for="(item, index) in 8" :key="index">
                 <div class="slider-card">
-                    <div class="slider-item-img"><img src="@/assets/Images/product-1.png" alt=""></div>
+                    <div class="slider-item-img"><img src="@/assets/images/product-1.png" alt=""></div>
                     <h4 class="slider-item-title">Slimming Gel Body</h4>
                     <p class="slider-item-subtitle">Гель для тела для похудения</p>
                     <p class="slider-item-price">2 480 руб <span>3579 руб</span></p>
