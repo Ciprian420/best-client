@@ -1,5 +1,6 @@
 <template>
   <main class="main">
+    <div class="container">\
     <div class="main-container">
       <div class="order-and-adress">
         <div class="adress">
@@ -104,6 +105,7 @@
         </div>
         <OrderDescriptionCard></OrderDescriptionCard>
       </div>
+    </div>
     </div>
   </main>
 </template>

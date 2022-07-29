@@ -52,6 +52,7 @@ export default {
   font-weight: 700;
   font-size: 90px;
   margin-left:250px;
+  line-height: 60px;
 }
 .container{
   height: 1000px;
@@ -74,6 +75,7 @@ margin-top: 20px;
   margin-left: 100px;
   margin-top: 50px;
   width: 700px;
+  cursor: pointer;
 }
 .user-name{
   width: 115px;

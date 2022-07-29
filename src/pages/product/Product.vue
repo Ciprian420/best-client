@@ -59,7 +59,6 @@ export default {
 <style scoped>
 .product-container{
   display: flex;
-  margin-top: 100px;
 }
 .image-background{
   background-color: #F3F3F3;
@@ -177,7 +176,9 @@ export default {
 .offers{
   display: flex;
   flex-direction: row;
-  margin-left: 50px;
+  margin-left: 62px;
+  margin-bottom: 40px;
+  margin-top: 10px;
 }
 p{
   font-family: 'Roboto', sans-serif;
