@@ -76,6 +76,7 @@ margin-top: 20px;
   margin-left: 100px;
   margin-top: 50px;
   width: 700px;
+  cursor: pointer;
 }
 .user-name{
   width: 115px;

@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import ContactsStoreCard from "@/pages/contacts/ContactsStoreCard";
+import ContactsStoreCard from "../contacts/ContactsStoreCard";
 
 export default {
   name: "Contacts-page",

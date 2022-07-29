@@ -2,7 +2,7 @@
     <div class="header-popup-wrapper">
         <div class="header-popup">
             <div class="container">
-                <ul class="tabs">
+                <ul class="tabs1">
                     <li class="tab" v-for="(item, index) in tabList" :key="index" @click="currentTab = index" 
                     :class="{active: currentTab === index}">
                         {{item.tabName}}
@@ -18,7 +18,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
     </div>
 </template>
 
@@ -121,7 +121,7 @@ export default {
     height: 500px;
     padding-bottom: 20px;
 }
-.tabs {
+.tabs1 {
     overflow: auto;
     -ms-overflow-style: none;  
     scrollbar-width: none;  
