@@ -1,7 +1,7 @@
 <template>
 <div class="main-container">
   <div class="card-container">
-    <img src="@/assets/Images/card-image.png" alt="">
+    <img src="@/assets/images/card-image.png" alt="">
     <p class="card-title">Эксперт назвал способный удивить любую женщину цветок</p>
     <p class="card-description">Протея — это тот цветок, который может вызвать умиление, восторг и восхищение у любой женщины. Такую точку зрения выразили эксперты, опрошенны..</p>
   </div>
