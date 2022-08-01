@@ -11,9 +11,17 @@
     <nav class="main-header-nav">
       <div class="container main-header-nav-inner">
         <div class="main-header-links">
+          <router-link to="/home">
           <div class="main-header-logo"><a href="#"><img src="@/assets/images/logo.png" alt=""></a></div>
+          </router-link>
           <ul class="main-header-menu">
-            <li v-for="(item, index) in menuLinks" :key="index"  @click="index === 0 ? showPopup = !showPopup : ''">{{item}}</li>
+            <li v-for="(item, index) in menuLinks"
+                @mouseover="hoverOnThisElement = index"
+                @mouseout="hoverOnThisElement = null"
+                :class="[ hoverOnThisElement === index ? { active: hoverOnThisElement } : null ]"
+                :key="index"  @click="index === 0 ? showPopup = !showPopup : ''">
+              <router-link :to="item.link" class="main-header-menu">{{item.name}}</router-link>
+            </li>
           </ul>
         </div>
         <ul class="main-header-buttons">
@@ -38,8 +46,16 @@ export default {
   },
   data() {
     return {
-      menuLinks: ['Каталог', 'Клуб косметологов', 'Сертификаты', 'Доставка и оплата', 'Контакты', 'Блог'],
-      showPopup: false
+      menuLinks: [
+        {name:'Каталог', link: ''},
+        {name:'Клуб косметологов', link: '/club'},
+        {name:'Сертификаты', link: ''},
+        {name:'Доставка и оплата', link: '/faq'},
+        {name:'Контакты', link: '/contacts'},
+        {name:'Блог', link: '/blog'}
+      ],
+      showPopup: false,
+      hoverOnThisElement: null,
     };
   },
 }
@@ -91,6 +107,25 @@ export default {
   line-height: 150%;
   color: #000;
   text-decoration: none;
+  background: transparent;
+}
+.main-header-menu li {
+  position: relative;
+}
+.main-header-menu li:after {
+  position: absolute;
+  background: #5C5C66;
+  content: '';
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  transition: transform 300ms;
+  transform: scale(0);
+}
+.main-header-menu li:hover::after {
+  transform-origin: center;
+  transform: scale(1);
 }
 .main-header-menu,.main-header-buttons {
   display: flex;
@@ -99,7 +134,15 @@ export default {
   margin-right: 25px;
   cursor: pointer;
 }
+.main-header-menu li:hover, .main-header-buttons li:hover {
+  opacity: 0.6;
+}
 .main-header-menu li:last-child, .main-header-buttons li:last-child {
   margin-right: 0;
+}
+.active {
+  background: transparent;
+  opacity: 0.7;
+  color: #5C5C66;
 }
 </style>
