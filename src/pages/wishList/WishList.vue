@@ -21,15 +21,14 @@
       </div>
       <div class="tab-content-container">
         <div v-if="currentTab === 0"><user-info></user-info></div>
-        <div v-if="currentTab === 1"></div>
-        <div v-if="currentTab === 2"></div>
-        <div v-if="currentTab === 3"></div>
-        <div v-if="currentTab === 4"></div>
-        <div v-if="currentTab === 5"></div>
-        <div v-if="currentTab === 6"></div>
-        <div v-if="currentTab === 7"></div>
-      </div>
-    </div>
+        <div v-else-if="currentTab === 1"></div>
+        <div v-else-if="currentTab === 2"></div>
+        <div v-else-if="currentTab === 3"></div>
+        <div v-else-if="currentTab === 4"></div>
+        <div v-else-if="currentTab === 5"></div>
+        <div v-else-if="currentTab === 6"></div>
+        <div v-else-if="currentTab === 7"></div>
+      </div>else</div>
   </div>
 </main>
 </template>
