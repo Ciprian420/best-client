@@ -17,14 +17,16 @@
       <blog-card></blog-card>
     </div>
   </div>
+  <product-popup></product-popup>
 </template>
 
 <script>
 
 import BlogCard from "@/pages/blog/Card";
+import ProductPopup from "@/components/productPopup/ProductPopup";
 export default {
   name: 'blog-page',
-  components: {BlogCard}
+  components: {ProductPopup, BlogCard}
 }
 </script>
 
