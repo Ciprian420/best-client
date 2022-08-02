@@ -1,12 +1,10 @@
 <template>
-  <main class="main">
-    <home-top></home-top>
-    <home-advantages></home-advantages>
-    <slider></slider>
-    <auction-slider></auction-slider>
-    <slider></slider>
-    <home-mail></home-mail>
-  </main>
+  <home-top></home-top>
+  <home-advantages></home-advantages>
+  <slider></slider>
+  <auction-slider></auction-slider>
+  <slider></slider>
+  <home-mail></home-mail>
 </template>
 
 <script>
