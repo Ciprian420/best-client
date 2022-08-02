@@ -71,6 +71,7 @@ export default {
   text-decoration: none;
 }
 .main-header-nav {
+  height: 87px;
   background-color: #fff;
 }
 .main-header-nav-inner {

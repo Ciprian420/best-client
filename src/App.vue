@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="main">
   <router-view>
 
   </router-view>
@@ -32,6 +32,7 @@
   display: inline-block;
   height: 58px;
   color: #fff;
+  text-align: center;
   text-decoration: none;
   padding: 18px 20px;
   background-color: #000;

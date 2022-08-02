@@ -2,8 +2,8 @@
     <div class="header-popup-wrapper">
         <div class="header-popup">
             <div class="container">
-                <ul class="tabs">
-                    <li class="tab" v-for="(item, index) in tabList" :key="index" @click="currentTab = index" 
+                <ul class="tab-links">
+                    <li class="tab-link" v-for="(item, index) in tabList" :key="index" @click="currentTab = index" 
                     :class="{active: currentTab === index}">
                         {{item.tabName}}
                     </li>
@@ -115,22 +115,23 @@ export default {
     width: 100%;
     height: 500px;
     background-color: #fff;
+    padding: 10px 0;
 }
 .header-popup .container {
     display: flex;
     height: 500px;
     padding-bottom: 20px;
 }
-.tabs {
+.tab-links {
     overflow: auto;
     -ms-overflow-style: none;  
     scrollbar-width: none;  
 }
-.tabs::-webkit-scrollbar { 
+.tab-links::-webkit-scrollbar { 
     display: none;  
 }
 
-.tab {
+.tab-link {
     position: relative;
     width: 300px;
     font-size: 18px;
@@ -139,7 +140,7 @@ export default {
     cursor: pointer;
     margin-bottom: 20px;
 }
-.tab::after {
+.tab-link::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -151,7 +152,7 @@ export default {
     border-bottom: 7px solid transparent;
     border-left: 8px solid #37373780;
 }
-.tab.active {
+.tab-link.active {
     color: rgba(0, 0, 0);
 }
 .tabs-content {
