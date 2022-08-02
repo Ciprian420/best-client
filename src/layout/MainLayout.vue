@@ -1,7 +1,9 @@
 <template>
-  <div id="main">
+  <div id="layout">
     <Header></Header>
-    <router-view></router-view>
+      <div class="layout-wrapper">
+        <router-view></router-view>
+      </div>
     <Footer></Footer>
   </div>
 </template>
@@ -20,5 +22,7 @@ export default {
 </script>
 
 <style scoped>
-
+ .layout-wrapper {
+   margin-top: 150px;
+ }
 </style>

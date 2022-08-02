@@ -3,7 +3,7 @@
     <div class="product-container">
       <div class="product-image-container">
         <div class="image-background">
-          <img src="../../img/product-image.png" alt="" class="product-image">
+          <img src="@/assets/images/product-image.png" alt="" class="product-image">
         </div>
       </div>
       <div class="product-info-container">
@@ -21,24 +21,24 @@
         </div>
         <div class="buttons">
           <button class="add-to-cart-button waves-effect waves-light btn">Добавить в корзину</button>
-          <button class="add-to-fav-button waves-effect waves-light btn"><img src="../../img/fav-icon.png" alt="" class="fav-icon"></button>
-          <button class="compare-button waves-effect waves-light btn"><img src="../../img/compare-icon.png" alt="" class="compare-icon"></button>
+          <button class="add-to-fav-button waves-effect waves-light btn"><img src="@/assets/images/fav-icon.png" alt="" class="fav-icon"></button>
+          <button class="compare-button waves-effect waves-light btn"><img src="@/assets/images/compare-icon.png" alt="" class="compare-icon"></button>
         </div>
       </div>
     </div>
     <div class="offers">
       <div class="first-offer">
-        <img src="../../img/firstoffer.png" alt="" class="first-offer-photo">
+        <img src="@/assets/images/firstoffer.png" alt="" class="first-offer-photo">
         <p>Бесплатная
           доставка от 1000 руб</p>
       </div>
       <div class="second-offer">
-        <img src="../../img/secondoffer.png" alt="" class="second-offer-photo" >
+        <img src="@/assets/images/secondoffer.png" alt="" class="second-offer-photo" >
         <p>Доставка по всей
           территории РФ</p>
       </div>
       <div class="third-offer">
-        <img src="../../img/thirdoffer.png" alt="" class="third-offer-photo">
+        <img src="@/assets/images/thirdoffer.png" alt="" class="third-offer-photo">
         <p>Гарантия качества
           продукции </p>
       </div>
@@ -59,7 +59,6 @@ export default {
 <style scoped>
 .product-container{
   display: flex;
-  margin-top: 100px;
 }
 .image-background{
   background-color: #F3F3F3;
@@ -177,7 +176,9 @@ export default {
 .offers{
   display: flex;
   flex-direction: row;
-  margin-left: 50px;
+  margin-left: 62px;
+  margin-bottom: 40px;
+  margin-top: 10px;
 }
 p{
   font-family: 'Roboto', sans-serif;

@@ -28,6 +28,7 @@
   padding: 0 10px;
   margin: 0 auto;
 }
+
 .button {
   display: inline-block;
   height: 58px;

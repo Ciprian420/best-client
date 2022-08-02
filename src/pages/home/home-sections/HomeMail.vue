@@ -1,7 +1,7 @@
 <template>
     <div class="mail">
         <div class="container mail-inner">
-            <img src="@/assets/Images/mail-bg.jpg" alt="" class="mail-img">
+            <img src="@/assets/images/mail-bg.jpg" alt="" class="mail-img">
             <div class="mail-content">
                 <div class="mail-info">
                     <h4 class="mail-title">
