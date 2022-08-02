@@ -1,10 +1,10 @@
 <template>
   <main class="main">
-    <div class="container">\
+    <div class="container">
     <div class="main-container">
       <div class="order-and-address">
-        <div class="address">
-          <p class="step-one">Адрес и доставка</p>
+        <p class="step-one" @click="isShowStepOne = !isShowStepOne">Адрес и доставка</p>
+        <div class="address" v-show="isShowStepOne">
           <div class="category-container">
             <p class="address-category">Населенный пункт</p>
             <p class="address-description">г. Красноярск Красноярский край</p>
@@ -55,7 +55,8 @@
           </div>
           <p class="instruction">Как только ваш заказ будет передан курьеру, вы получите SMS-сообщение.</p>
         </div>
-        <p class="step-two">Получатель</p>
+        <p class="step-two" @click="isShowStepTwo = !isShowStepTwo">Получатель</p>
+        <div class="step-two-container" v-show="isShowStepTwo">
         <div class="category-container">
           <p class="address-category">Ваши данные</p>
           <div class="input-container">
@@ -63,7 +64,7 @@
               <input id="first_name" type="text" class="validate" placeholder="First Name">
             </div>
             <div class="input-field col s6">
-              <input id="last_name" type="text" class="validate" style="width: 300px" placeholder="Last Name">
+              <input id="last_name" type="text" class="validate input-width" placeholder="Last Name">
             </div>
           </div>
         </div>
@@ -71,17 +72,18 @@
           <p class="address-category">Ваши данные</p>
           <div class="input-container">
             <div class="input-field col s6">
-              <input id="icon_telephone" type="tel" class="validate" style="width: 300px" placeholder="Telephone">
+              <input id="icon_telephone" type="tel" class="validate input-width"  placeholder="Telephone">
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <input id="email" type="email" class="validate" style="width: 300px" placeholder="E-mail">
+                <input id="email" type="email" class="validate input-width"  placeholder="E-mail">
               </div>
             </div>
           </div>
+          </div>
         </div>
-        <p class="step-three">Оплата</p>
-        <p class="instruction">бесконтактная доставка действует для всех заказов, оплаченных онлайн</p>
+        <p class="step-three" @click="isShowStepThree = !isShowStepThree">Получатель>Оплата</p>
+        <div class="step-three-container" v-show="isShowStepThree">
         <div class="pay-method-container move-to-right">
           <div class="delivery-select active center">
             <img :src="require('@/assets/images/card-icon.png')" alt="">
@@ -96,7 +98,8 @@
         <p class="instruction">Оплата курьеру банковской картой или наличными.</p>
         <p class="instruction">Обратите внимание! Подарочные сертификаты и бонусы
           к оплате не принимаются.</p>
-        <button class="city-change-btn waves-effect waves-light btn" style="width: 300px;">Оформить заказ</button>
+        </div>
+        <button class="city-change-btn waves-effect waves-light btn input-width">Оформить заказ</button>
       </div>
       <div class="product-info-container">
         <div class="product-header">
@@ -114,11 +117,21 @@
 import OrderDescriptionCard from "@/pages/order/OrderDescriptionCard";
 export default {
   name: "OrderConfirmation",
-  components: {OrderDescriptionCard}
+  components: {OrderDescriptionCard},
+  data() {
+    return {
+      isShowStepOne: true,
+      isShowStepTwo: true,
+      isShowStepThree: true,
+    };
+  },
 }
 </script>
 
 <style scoped>
+.input-width{
+  width: 300px;
+}
 .pay-method-container{
   display: flex;
   flex-direction: row;
@@ -188,7 +201,7 @@ export default {
   display: flex;
   flex-direction: row;
   margin-top: 80px;
-  height: 100px;
+  height: 150px;
 }
 .delivery-select{
   border: 1px solid gray;
