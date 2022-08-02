@@ -28,7 +28,8 @@
         <div v-else-if="currentTab === 5"></div>
         <div v-else-if="currentTab === 6"></div>
         <div v-else-if="currentTab === 7"></div>
-      </div>else</div>
+      </div>
+    </div>
   </div>
 </main>
 </template>
