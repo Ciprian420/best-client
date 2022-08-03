@@ -13,11 +13,22 @@
     <div class="tab-and-categories-container">
       <div class="categories">
         <ul>
-          <li class="category-text" v-for="(item, index) in categories" :key="index" @click="currentTab = index"
-              :class="{active: currentTab === index}"> {{item}} </li>
+          <li class="category-text" v-for="(item, index) in tabList" :key="index" @click="currentTab = index"
+              :class="{active: currentTab === index}"> {{item.tabName}}</li>
+          <router-link to="/home" class="category-text">выйти</router-link>
+
         </ul>
       </div>
-      <user-info></user-info>
+      <div class="tab-content-container">
+        <div v-if="currentTab === 0"><user-info></user-info></div>
+        <div v-else-if="currentTab === 1"></div>
+        <div v-else-if="currentTab === 2"></div>
+        <div v-else-if="currentTab === 3"></div>
+        <div v-else-if="currentTab === 4"></div>
+        <div v-else-if="currentTab === 5"></div>
+        <div v-else-if="currentTab === 6"></div>
+        <div v-else-if="currentTab === 7"></div>
+      </div>
     </div>
   </div>
 </main>
@@ -25,12 +36,42 @@
 
 <script>
 import UserInfo from "@/components/userInfo/UserInfo";
+
 export default {
   name: "WishList",
   components: {UserInfo},
   data() {
     return{
-      categories: [ "мои карты" ," мои клиентские дни " , "личная информация" , "избранное" , "мои покупки", "чат с консультантом", "настройки" ,"выйти" ],
+      tabList: [
+          {
+            tabName:'мои карты',
+            tabContent: []
+          },
+          {
+            tabName:' мои клиентские дни ',
+                tabContent: []
+          },
+          {
+            tabName:'личная информация',
+                tabContent: []
+          },
+          {
+            tabName:'избранное',
+                tabContent: []
+          },
+          {
+            tabName:'мои покупки',
+                tabContent: []
+          },
+          {
+            tabName:'чат с консультантом',
+                tabContent: []
+          },
+          {
+            tabName:'настройки',
+                tabContent: []
+          }
+        ],
       currentTab: 0
     }
   }
