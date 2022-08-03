@@ -3,7 +3,7 @@
     <div class="club">
       <div class="container club-inner">
         <div class="club-image-wrapper">
-          <img src="@/assets/Images/club-img.jpg" alt="">
+          <img src="@/assets/images/club-img.jpg" alt="">
           <div class="club-image-content">
             <p class="club-image-subtitle">Тоник для лица освежающий охлаждающий</p>
             <p class="club-image-title">Skindom</p>
