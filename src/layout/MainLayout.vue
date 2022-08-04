@@ -23,6 +23,6 @@ export default {
 
 <style scoped>
  .layout-wrapper {
-   margin-top: 150px;
+   margin-top: 137px;
  }
 </style>

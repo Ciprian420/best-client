@@ -17,7 +17,6 @@
 }
 .main {
   position: relative;
-  padding-top: 137px;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 18px;
