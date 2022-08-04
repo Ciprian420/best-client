@@ -1,7 +1,10 @@
 <template>
-    <div class="popup-wrapper" v-if="isPopupActive === true">
-        <div class="popup" :class="{active: isPopupActive}">
-            <div class="close-btn" @click="isPopupActive = false"></div>
+    <div class="popup-wrapper">
+        <div class="popup active">
+            <div class="close-btn" @click="active(false)"></div>
+          <div class="content">
+            <slot></slot>
+          </div>
         </div>
     </div>
 </template>
@@ -9,23 +12,23 @@
 <script>
 export default {
     name: 'MainPopup',
-
-    data() {
-        return {
-            isPopupActive: true,
-        };
-    },
+  props: ['active'],
 
     mounted() {
         
     },
 
-    methods: {
-    },
+  methods: {
+  }
 };
 </script>
 
 <style scoped>
+.content{
+  height: 100%;
+  padding: 30px 0;
+  overflow-y:auto ;
+}
 .popup-wrapper {
     display: flex;
     justify-content: end;
@@ -63,7 +66,7 @@ export default {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 50px;
+    width: 60px;
     height: 3px;
     background-color: #000;
 }

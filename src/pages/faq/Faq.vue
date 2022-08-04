@@ -20,7 +20,7 @@
           <div class="faq-delivery-info">Добавьте товары в корзину, и мы рассчитаем точные условия доставки для вашего заказа</div>
           <a href="" class="faq-delivery-btn button">Перейти в каталог</a>
         </div>
-        <div class="faq-delivery-img"><img src="@/assets/Images/faq-img.jpg" alt=""></div>
+        <div class="faq-delivery-img"><img src="@/assets/images/faq-img.jpg" alt=""></div>
       </div>
       <div class="faq-info">
         <h4 class="faq-info-title">Правила предоставления услуг</h4>
@@ -268,7 +268,7 @@ export default {
   transform: translateY(-50%);
   width: 74px;
   height: 74px;
-  background-image: url('@/assets/Images/basket-gray.png');
+  background-image: url('@/assets/images/basket-gray.png');
 }
 .faq-delivery-btn {
   width: 100%;
