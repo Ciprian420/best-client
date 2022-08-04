@@ -13,13 +13,14 @@
             :email="card.email"
             :number="card.number"></ContactsStoreCard>
       </div>
-      <div id="map"></div>
+      <div id="map" ref="myId"></div>
     </div>
   </div>
 </template>
 
 <script>
 import ContactsStoreCard from "../contacts/ContactsStoreCard";
+import { Loader } from "@googlemaps/js-api-loader";
 
 export default {
   name: "Contacts-page",
@@ -36,49 +37,33 @@ export default {
         { type: 'Офис', city: 'Кишинев' , address: 'Stefan cel Mare St 68/2', website: 'office.com', email: 'office@gmail.com', number: '+373 4445 3960', id: 5 },
         { type: 'Филиал', city: 'Кишинев' , address: 'Stefan cel Mare St 89/6', website: 'filial.com', email: 'filial@gmail.com', number: '+373 1235 3860', id: 6 },
         { type: 'Филиал', city: 'Кишинев' , address: 'Stefan cel Mare St 43/21', website: 'filial.com', email: 'filial@gmail.com', number: '+373 3215 3860', id: 7 },
-      ]
+      ],
+      map: null,
+    }
+  },
+  methods: {
+    initMap() {
+      const map = this.$refs.myId
+      // eslint-disable-next-line no-undef
+      const centerOfMap = new google.maps.LatLng(47, 28.86);
+      // eslint-disable-next-line no-undef
+      this.map = new google.maps.Map(map, {
+        center: centerOfMap,
+        zoom: 12,
+      })
     }
   },
   mounted() {
-    // eslint-disable-next-line no-undef
-    mapboxgl.accessToken = 'pk.eyJ1IjoibmF0YW5lciIsImEiOiJjbDYzcHRncjcwaHZ2M2JvNWQ3a3Q2ampyIn0.hRfyPyAqAo2vb-yhIW8ZWQ'
-    // eslint-disable-next-line no-undef
-    const map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v11',
-      center: [28.835, 47.012670],
-      zoom: 12.5,
-      projection: 'globe'
-    });
-    // eslint-disable-next-line no-undef
-    new mapboxgl.Marker({ color: 'red' })
-        .setLngLat([28.830, 47.021])
-        .addTo(map);
-    // eslint-disable-next-line no-undef
-    new mapboxgl.Marker({ color: 'blue' })
-        .setLngLat([28.830, 47.024])
-        .addTo(map);
-    // eslint-disable-next-line no-undef
-    new mapboxgl.Marker({ color: 'yellow' })
-        .setLngLat([28.835, 47.02])
-        .addTo(map);
-    // eslint-disable-next-line no-undef
-    new mapboxgl.Marker({ color: 'green' })
-        .setLngLat([28.835, 47.023])
-        .addTo(map);
-    // eslint-disable-next-line no-undef
-    new mapboxgl.Marker({ color: '#30d5c8' })
-        .setLngLat([28.830, 47.029])
-        .addTo(map);
-    // eslint-disable-next-line no-undef
-    new mapboxgl.Marker({ color: 'purple' })
-        .setLngLat([28.828, 47.028])
-        .addTo(map);
-    // eslint-disable-next-line no-undef
-    new mapboxgl.Marker({ color: '#D785A1' })
-        .setLngLat([28.824, 47.027])
-        .addTo(map);
 
+    // eslint-disable-next-line no-undef
+    const loader = new Loader({
+      apiKey: "AIzaSyBep00Ryhyqv9Ao-z4YHapbLj4_4qmZuX4&libraries=drawing&callback=initMap&v=weekly",
+      version: "weekly",
+    })
+
+    loader.load().then(() => {
+      this.initMap()
+    })
   }
 }
 </script>
