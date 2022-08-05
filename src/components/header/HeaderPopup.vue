@@ -89,15 +89,7 @@ export default {
             currentTab: 0,
 
         };
-    },
-
-    mounted() {
-        
-    },
-
-    methods: {
-        
-    },
+    }
 };
 </script>
 
