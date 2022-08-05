@@ -8,12 +8,12 @@
             </div>
         </div>
         <agile ref="carousel" :slidesToShow="4" :infinite="false" :navButtons="false" :dots="false">
-            <div class="slider-item" v-for="(item, index) in 8" :key="index">
+            <div class="slider-item" v-for="(item, index) in products" :key="index">
                 <div class="slider-card">
-                    <div class="slider-item-img"><img src="@/assets/images/product-1.png" alt=""></div>
-                    <h4 class="slider-item-title">Slimming Gel Body</h4>
-                    <p class="slider-item-subtitle">Гель для тела для похудения</p>
-                    <p class="slider-item-price">2 480 руб <span>3579 руб</span></p>
+                    <div class="slider-item-img"><img :src="item.imageURL" alt=""></div>
+                    <h4 class="slider-item-title">{{item.name}}</h4>
+                    <p class="slider-item-subtitle">{{item.shortDescription}}</p>
+                    <p class="slider-item-price">{{item.price}} руб <span>{{item.oldPrice}} руб</span></p>
                 </div>
             </div>
         </agile>
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import { VueAgile } from 'vue-agile'
 
 export default {
@@ -30,16 +31,14 @@ export default {
     },
     data() {
         return {
-            
+            products: []
         };
     },
-
     mounted() {
-        
-    },
-
-    methods: {
-        
+        axios.get('http://localhost:3002/api/v1/products')
+            .then(response => response.data.products.forEach(item => this.products.push(item)))
+            .then(() => console.log(this.products))
+            .catch(err => console.log(err))
     },
 };
 </script>
@@ -74,10 +73,13 @@ export default {
     justify-content: center;
     align-items: center;
     height: 400px;
+    width: 400px;
     margin-bottom: 5px;
 }
 .slider-item-img img {
-
+    width: 300px;
+    height: 300px;
+    /* object-fit: cover; */
 }
 .slider-item-title {
     margin-bottom: 5px;
