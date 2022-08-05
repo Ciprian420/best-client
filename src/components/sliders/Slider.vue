@@ -10,10 +10,10 @@
         <agile ref="carousel" :slidesToShow="4" :infinite="false" :navButtons="false" :dots="false">
             <div class="slider-item" v-for="(item, index) in 8" :key="index">
                 <div class="slider-card">
-                    <div class="slider-item-img"><img src="@/assets/images/product-1.png" alt=""></div>
-                    <h4 class="slider-item-title">Slimming Gel Body</h4>
-                    <p class="slider-item-subtitle">Гель для тела для похудения</p>
-                    <p class="slider-item-price">2 480 руб <span>3579 руб</span></p>
+                    <div class="slider-item-img"><img src="@/assets/images/car.png" alt=""></div>
+                    <h4 class="slider-item-title">Slimming Gel Bodysssssssssssssssss</h4>
+                    <p class="slider-item-subtitle">Гель для тела для похуденияsssssssssssssss</p>
+                    <p class="slider-item-price">2 480 рубddddddddddddd <span>3579 ddddddddddddddddd</span></p>
                 </div>
             </div>
         </agile>
@@ -32,14 +32,6 @@ export default {
         return {
             
         };
-    },
-
-    mounted() {
-        
-    },
-
-    methods: {
-        
     },
 };
 </script>
@@ -68,16 +60,19 @@ export default {
 }
 .slider-card {
     width: 350px;
+    border: 1px solid red;
 }
 .slider-item-img {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px;
+    width: 350px;
+    height: 300px;
     margin-bottom: 5px;
 }
 .slider-item-img img {
-
+    max-width: 100%;
+    max-height: 100%;
 }
 .slider-item-title {
     margin-bottom: 5px;

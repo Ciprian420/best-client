@@ -59,7 +59,6 @@ export default {
 .offers{
   display: flex;
   flex-direction: row;
-  margin-left: 50px;
 }
 p{
   font-family: 'Roboto', sans-serif;
@@ -81,7 +80,6 @@ p{
   height: 1px;
   width: 100%;
   background-color: black;
-  margin-left: 50px;
 }
 .bolder-line{
   height: 3px;
