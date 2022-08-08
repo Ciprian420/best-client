@@ -37,8 +37,6 @@ export default {
     mounted() {
         axios.get('http://localhost:3002/api/v1/products')
             .then(response => response.data.products.forEach(item => this.products.push(item)))
-            .then(() => console.log(this.products))
-            .catch(err => console.log(err))
     },
 };
 </script>

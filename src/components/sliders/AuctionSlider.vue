@@ -8,12 +8,12 @@
             </div>
         </div>
         <agile ref="carousel" :slidesToShow="1" :infinite="false" :navButtons="false" :dots="false">
-            <div class="auction-slider-item" v-for="(item, index) in 8" :key="index">
+            <div class="auction-slider-item" v-for="(item, index) in products" :key="index">
                 <div class="auction-slider-card">
-                    <div class="auction-slider-item-img"><img src="@/assets/images/product-2.png" alt=""></div>
-                    <h4 class="auction-slider-item-title">R&B Black Food 3.7</h4>
+                    <div class="auction-slider-item-img"><img :src="item.imageURL" alt=""></div>
+                    <h4 class="auction-slider-item-title">{{item.name}}</h4>
                     <p class="auction-slider-item-subtitle">
-                        Бальзам-ополаскиватель для волос с экстрактами 3 черных семян и 7 черных плодов
+                       {{item.description}}
                     </p>
                 </div>
             </div>
@@ -23,12 +23,27 @@
 
 <script>
 import { VueAgile } from 'vue-agile'
+import axios from "axios";
 
 export default {
     name: 'AuctionSlider',
     components: {
         agile: VueAgile 
-    }
+    },
+  data() {
+    return {
+      products: []
+    };
+  },
+  mounted() {
+    axios.get('http://localhost:3002/api/v1/products')
+        .then(response => response.data.products.forEach(item =>{
+          if (item.isPromo === true ){
+            this.products.push(item)
+          }
+        }))
+        .then(() => console.log(this.products))
+  },
 };
 </script>
 
@@ -66,7 +81,8 @@ export default {
     margin-bottom: 5px;
 }
 .slider-item-img img {
-
+max-width: 100%;
+max-height: 100%;
 }
 .auction-slider-item-title {
     font-size: 48px;
