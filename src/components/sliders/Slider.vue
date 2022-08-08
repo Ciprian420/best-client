@@ -20,24 +20,33 @@
     </div>
 </template>
 
+
 <script>
 import axios from 'axios';
-import { VueAgile } from 'vue-agile'
+import { VueAgile } from 'vue-agile';
 
 export default {
     name: 'ProjectsSlider',
     components: {
         agile: VueAgile 
+        
     },
     data() {
         return {
-            products: []
+            products: [],
+            arr: [1, 2, 3, 1, 1, 1,1]
         };
     },
     mounted() {
         axios.get('http://localhost:3002/api/v1/products')
             .then(response => response.data.products.forEach(item => this.products.push(item)))
+            .then(() => this.products)
+            .then(() => {
+                console.log(this.products[0]);
+            })
+            .catch(err => console.log(err))
     },
+
 };
 </script>
 
@@ -65,19 +74,19 @@ export default {
 }
 .slider-card {
     width: 350px;
+    border: 1px solid red;
 }
 .slider-item-img {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px;
-    width: 400px;
+    width: 350px;
+    height: 300px;
     margin-bottom: 5px;
 }
 .slider-item-img img {
-    width: 300px;
-    height: 300px;
-    /* object-fit: cover; */
+    max-width: 100%;
+    max-height: 100%;
 }
 .slider-item-title {
     margin-bottom: 5px;

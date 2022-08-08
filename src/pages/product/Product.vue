@@ -1,26 +1,26 @@
 <template>
-  <main class="main">
+    <div class="container">
     <div class="product-container">
       <div class="product-image-container">
         <div class="image-background">
-          <img src="@/assets/images/product-image.png" alt="" class="product-image">
+          <img :src="productInfo.imageUrl" alt="" class="product-image">
         </div>
       </div>
       <div class="product-info-container">
-        <p class="product-uses">Тоник для лица освежающий охлаждающий</p>
-        <p class="product-name">Skindom Luxury cell pepride Deep Cleansing oil</p>
-        <p class="product-number">Артикул: 19000000618</p>
-        <p class="product-quantity">  объем / мл</p>
+        <p class="product-uses">{{productInfo.name}}</p>
+        <p class="product-name">{{productInfo.title}}</p>
+        <p class="product-number">Артикул: {{productInfo.id}}</p>
+        <p class="product-quantity"><span>{{productInfo.quantity}}</span>  объем / мл</p>
         <div class="product-price">
-          <p class="current-price">1300 rub</p>
-          <p class="old-price" style="color: #B9B9B9"><del>2300 rub</del></p>
+          <p class="current-price">{{productInfo.price}} rub</p>
+          <p class="old-price" style="color: #B9B9B9"><del v-if="isPromoActive">{{productInfo.oldPrice}} rub</del></p>
         </div>
         <div class="product-price-info">
-          <p class="current-price-info">Со скидкой 44%</p>
-          <p class="old-price-info" style="color: #B9B9B9">Без скидки</p>
+          <p class="current-price-info">Со скидкой {{productInfo.promoPercent}}%</p>
+          <p class="old-price-info" style="color: #B9B9B9" v-if="isPromoActive">Без скидки</p>
         </div>
         <div class="buttons">
-          <button class="add-to-cart-button waves-effect waves-light btn">Добавить в корзину</button>
+          <button class="add-to-cart-button waves-effect waves-light btn" @click="saveToLocalStorage">Добавить в корзину</button>
           <button class="add-to-fav-button waves-effect waves-light btn"><img src="@/assets/images/fav-icon.png" alt="" class="fav-icon"></button>
           <button class="compare-button waves-effect waves-light btn"><img src="@/assets/images/compare-icon.png" alt="" class="compare-icon"></button>
         </div>
@@ -44,14 +44,43 @@
       </div>
     </div>
     <ProductDescription></ProductDescription>
-  </main>
+  </div>
 </template>
 
 <script>
 import ProductDescription from "./ProductDescription";
 export default {
   name: "ProductPage",
-  components: {ProductDescription}
+  components: {ProductDescription},
+  data() {
+    return {
+      productInfo: {
+        id: '1',
+        name: 'Не  для лица освежающий охлаждающий',
+        title: 'Something 2',
+        imageUrl: require('@/assets/images/product-image.png'),
+        price: 1300,
+        oldPrice: 2300,
+        promoPercent: (this.price / this.oldPrice) * 100,
+        quantity: 1500
+      },
+      isPromoActive: true
+    };
+  },
+  methods: {
+    saveToLocalStorage() {
+      if (!localStorage.products) {
+        localStorage.setItem('products', JSON.stringify([this.productInfo]))
+      } else {
+        let productsData = JSON.parse(localStorage.getItem('products'));
+        productsData.push(this.productInfo);
+        localStorage.setItem('products', JSON.stringify(productsData));
+        console.log(JSON.parse(localStorage.products));
+        this.$store.commit('toggleProductsState', productsData)
+        console.log(productsData);
+      }
+    }
+  }
 }
 
 </script>
@@ -59,6 +88,7 @@ export default {
 <style scoped>
 .product-container{
   display: flex;
+  padding: 100px 0;
 }
 .image-background{
   background-color: #F3F3F3;
@@ -73,7 +103,7 @@ export default {
   margin-right: 200px;
 }
 .product-name{
-  width: 732px;
+  max-width: 732px;
   height: 124px;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
@@ -97,11 +127,10 @@ export default {
   font-size: 16px;
   line-height: 150%;
 }
-.product-quantity:before{
+.product-quantity span{
   border: 1px solid;
   font-family: "Exo 2 SemiBold", sans-serif;
   padding: 5px;
-  content: "1500";
 }
 .product-price{
   height: 40px;
