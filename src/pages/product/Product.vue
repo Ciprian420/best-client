@@ -57,7 +57,7 @@ export default {
       productInfo: {
         id: '1',
         name: 'Не  для лица освежающий охлаждающий',
-        title: 'Something',
+        title: 'Something 2',
         imageUrl: require('@/assets/images/product-image.png'),
         price: 1300,
         oldPrice: 2300,

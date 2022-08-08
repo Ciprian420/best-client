@@ -28,20 +28,7 @@ export default {
     name: 'AuctionSlider',
     components: {
         agile: VueAgile 
-    },
-    data() {
-        return {
-            
-        };
-    },
-
-    mounted() {
-        
-    },
-
-    methods: {
-        
-    },
+    }
 };
 </script>
 

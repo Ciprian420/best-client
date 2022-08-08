@@ -6,9 +6,6 @@
 </main>
 </template>
 
-<script>
-</script>
-
 <style>
 * {
   padding: 0;

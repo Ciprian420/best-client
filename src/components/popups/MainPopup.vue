@@ -11,15 +11,8 @@
 
 <script>
 export default {
-    name: 'MainPopup',
-  props: ['active'],
-
-    mounted() {
-        
-    },
-
-  methods: {
-  }
+  name: 'MainPopup',
+  props: ['active']
 };
 </script>
 

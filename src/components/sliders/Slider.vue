@@ -8,31 +8,44 @@
             </div>
         </div>
         <agile ref="carousel" :slidesToShow="4" :infinite="false" :navButtons="false" :dots="false">
-            <div class="slider-item" v-for="(item, index) in 8" :key="index">
+            <div class="slider-item" v-for="(item, index) in products" :key="index">
                 <div class="slider-card">
-                    <div class="slider-item-img"><img src="@/assets/images/car.png" alt=""></div>
-                    <h4 class="slider-item-title">Slimming Gel Bodysssssssssssssssss</h4>
-                    <p class="slider-item-subtitle">Гель для тела для похуденияsssssssssssssss</p>
-                    <p class="slider-item-price">2 480 рубddddddddddddd <span>3579 ddddddddddddddddd</span></p>
+                    <div class="slider-item-img"><img :src="item.imageURL" alt=""></div>
+                    <h4 class="slider-item-title">fafafa</h4>
+                    <p class="slider-item-subtitle">dadada</p>
+                    <p class="slider-item-price">dadada руб <span>dada руб</span></p>
                 </div>
             </div>
-        </agile>
+        </agile> 
     </div>
 </template>
 
 <script>
-import { VueAgile } from 'vue-agile'
+import axios from 'axios';
+import { VueAgile } from 'vue-agile';
 
 export default {
     name: 'ProjectsSlider',
     components: {
         agile: VueAgile 
+        
     },
     data() {
         return {
-            
+            products: [],
+            arr: [1, 2, 3, 1, 1, 1,1]
         };
     },
+    mounted() {
+        axios.get('http://localhost:3002/api/v1/products')
+            .then(response => response.data.products.forEach(item => this.products.push(item)))
+            .then(() => this.products)
+            .then(() => {
+                console.log(this.products[0]);
+            })
+            .catch(err => console.log(err))
+    },
+
 };
 </script>
 
