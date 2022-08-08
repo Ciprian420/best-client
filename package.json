@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.14.3",
+    "admin-lte": "3.2",
     "axios": "^0.27.2",
     "core-js": "^3.8.3",
     "materialize": "^1.0.0",

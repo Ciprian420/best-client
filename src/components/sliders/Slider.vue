@@ -11,14 +11,15 @@
             <div class="slider-item" v-for="(item, index) in products" :key="index">
                 <div class="slider-card">
                     <div class="slider-item-img"><img :src="item.imageURL" alt=""></div>
-                    <h4 class="slider-item-title">fafafa</h4>
-                    <p class="slider-item-subtitle">dadada</p>
-                    <p class="slider-item-price">dadada руб <span>dada руб</span></p>
+                    <h4 class="slider-item-title">{{item.name}}</h4>
+                    <p class="slider-item-subtitle">{{item.shortDescription}}</p>
+                    <p class="slider-item-price">{{item.price}} руб <span>{{item.oldPrice}} руб</span></p>
                 </div>
             </div>
-        </agile> 
+        </agile>
     </div>
 </template>
+
 
 <script>
 import axios from 'axios';

@@ -1,5 +1,5 @@
 <template>
-  <header class="main-header">
+  <header class="header-main">
     <div class="main-header-top">
       <div class="container main-header-top-inner">
         <select name="" id="" class="main-header-city">
@@ -278,7 +278,7 @@ export default {
   margin-top: -40px;
 
 }
-.main-header {
+.header-main {
   position: fixed;
   top: 0;
   left: 0;
