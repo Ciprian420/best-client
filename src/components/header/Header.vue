@@ -47,13 +47,45 @@
     <p class="popup-description">быстрая доставка</p>
     <cart-product v-for="product in products" :key="product.id" :productInfo="product"></cart-product>
   </main-popup>
-  <main-popup v-show="isUserPopupVisible" :active="toggleUserPopupState">
+  <main-popup v-show="isUserPopupVisible" :active="toggleUserPopupState" >
     <div class="user-container">
-      <p class="popup-title">Покупай со скидкой</p>
-      <p class="user-popup-description">Зарегистрируйтесь, чтобы получить скидку по бонусной карте, начать копить бонусы и оплачивать покупки подарочными сертификатами.</p>
-      <button class="waves-effect waves-light btn submit-btn">Войти / Зарегистрироваться</button>
+      <p class="page-title">Register</p>
+      <input placeholder="Name" id="first_name" type="text" class="validate register-inputs">
+      <br>
+        <form class="checkbox-container">
+          <label>
+            <input type="radio" name="gender"/>
+            <span>Male</span>
+          </label>
+          <label>
+            <input type="radio" name="gender" />
+            <span>Female</span>
+          </label>
+        </form>
+      <input type="date">
+      <br>
+      <input id="email" type="email" class="validate register-inputs" placeholder="Email">
+      <br>
+      <div class="input-field col s6">
+        <input id="icon_telephone" type="tel" class="validate register-inputs" placeholder="Phone Number">
+        <br>
+        <input placeholder="Country" id="first_name" type="text" class="validate register-inputs">
+        <br>
+        <input placeholder="City" id="first_name" type="text" class="validate register-inputs">
+      </div>
+          <input id="password" type="password" class="validate" placeholder="Password">
+      <br>
+      <button class="waves-effect waves-light btn register-submit-button" >Submit</button>
     </div>
   </main-popup>
+<!--  <main-popup v-show="isUserPopupVisible" :active="toggleUserPopupState">
+    <p class="page-title">Login</p>
+    <input id="email" type="email" class="validate register-inputs" placeholder="Email">
+    <br>
+    <input id="password" type="password" class="validate" placeholder="Password">
+    <br>
+    <button class="waves-effect waves-light btn register-submit-button" >Submit</button>
+  </main-popup>-->
 </template>
 
 <script>
@@ -108,15 +140,32 @@ export default {
     },
     toggleUserPopupState(value) {
       this.$store.commit("toggleUserPopupState", value)
-    }
+    },
   }
 }
 </script>
 <style scoped>
-.user-popup-description{
-  width: 500px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+.register-submit-button{
+  width: 350px;
+  color: white;
+  background-color: black;
+  height: 40px;
+}
+.checkbox-container{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.page-title{
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 200%;
+  margin-bottom: 30px;
+}
+.register-inputs{
+  width: 350px;
 }
 .footer-container{
   display: flex;
@@ -172,7 +221,7 @@ export default {
   height: 100px;
 }
 .input-width{
-  width: 200px;
+  width: 200px!important;
 }
 .current-price{
   font-family: 'Roboto', sans-serif;
