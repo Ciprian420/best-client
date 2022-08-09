@@ -34,7 +34,12 @@ export default {
     name: 'AuctionSlider',
   data() {
     return {
-      products: []
+      products: [],
+      firstActiveSlide: 1,
+      lastActiveSlide: 1,
+      slidesNumber: 1,
+      isPrevArrowActive: false,
+      isNextArrowActive: true
     };
   },
   mounted() {
@@ -105,6 +110,24 @@ export default {
 .auction-slider-prev.active, .auction-slider-next.active {
     opacity: 1;
     cursor: pointer;
+}
+.auction-slider-item {
+    transition: all .15s;
+}
+.auction-slider-item.prev {
+    position: absolute;
+    left: -5000px;
+    transform: translateX(-100%);
+}
+.auction-slider-item.next {
+    position: absolute;
+    right: -5000px;
+    transform: translateX(100%);
+}
+.auction-slider-item.active {
+    position: static;
+    display: block;
+    transform: translateX(0);
 }
 .auction-slider-prev img {
     transform: rotate(-180deg);
