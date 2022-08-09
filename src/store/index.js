@@ -4,7 +4,8 @@ export default createStore({
   state: {
     isSearchPopupActive: false,
     isProductPopupActive: false,
-    isUserPopupActive: false
+    isUserPopupActive: false,
+    products: []
   },
   getters: {
     getSearchPopupState(state){
@@ -15,6 +16,9 @@ export default createStore({
     },
     getUserPopupState(state){
       return state.isUserPopupActive
+    },
+    getProductsState(state) {
+      return state.products
     }
   },
   mutations: {
@@ -26,6 +30,9 @@ export default createStore({
     },
     toggleUserPopupState(state, val){
       state.isUserPopupActive = val
+    },
+    toggleProductsState(state, val) {
+      state.products = val
     }
   },
 })

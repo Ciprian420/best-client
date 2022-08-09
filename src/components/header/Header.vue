@@ -45,49 +45,7 @@
   <main-popup v-show="isProductPopupVisible" :active="toggleProductPopupState">
     <p class="popup-title">Корзина / 1 шт.</p>
     <p class="popup-description">быстрая доставка</p>
-    <div class="product-actions">
-      <img src="@/assets/images/decrease-quantity.png" alt="" class="icon">
-      <p class="product-quantity">1</p>
-      <img src="@/assets/images/add-button-icon.png" alt="" class="icon">
-      <img src="@/assets/images/delete-button.png" alt="" class="icon">
-    </div>
-
-    <div class="product-container">
-      <img src="@/assets/images/product-image.png" alt="" class="product-image">
-      <div class="product-text">
-        <p class="product-description">Бальзам-ополаскиватель для волос с экстрактами черных семян и 7 черных плодов</p>
-        <p class="product-title">Woosin R&B Black Food 3.7</p>
-        <p class="product-volume">50 мл</p>
-      </div>
-      <div class="product-price-container">
-        <p class="old-price">2300 руб</p>
-        <div class="real-price-container">
-          <p class="discount-info">Скидка 1000 руб</p>
-          <p class="current-price">1300 руб</p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-container">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s12 column">
-            <textarea id="textarea1" class="materialize-textarea input-width" placeholder="Введите сумму"></textarea>
-            <textarea id="textarea1" class="materialize-textarea input-width" placeholder="Введите промокод"></textarea>
-          </div>
-        </div>
-      </form>
-      <div class="total-price-container">
-        <div class="column">
-          <p class="discount">Скидка</p>
-          <p class="total-discount">-2000 руб</p>
-        </div>
-        <div class="column">
-          <p class="price">К оплате</p>
-          <p class="total-price">2600 руб</p>
-        </div>
-      </div>
-    </div>
-    <button class="waves-effect waves-light btn submit-btn">Оформить заказ</button>
+    <cart-product v-for="product in products" :key="product.id" :productInfo="product"></cart-product>
   </main-popup>
   <main-popup v-show="isUserPopupVisible" :active="toggleUserPopupState" >
     <div class="user-container">
@@ -133,11 +91,14 @@
 <script>
 import HeaderPopup from "@/components/header/HeaderPopup.vue";
 import MainPopup from "@/components/popups/MainPopup";
+import cartProduct from "@/components/header/cartProduct";
+
 export default {
   name: 'HeaderComponent',
   components: {
     HeaderPopup,
-    MainPopup
+    MainPopup,
+    cartProduct
   },
   data() {
     return {
@@ -151,6 +112,7 @@ export default {
       ],
       showPopup: false,
       hoverOnThisElement: null,
+      products: []
     };
   },
   computed: {
@@ -170,6 +132,11 @@ export default {
     },
     toggleProductPopupState(value) {
       this.$store.commit("toggleProductPopupState", value)
+      if (localStorage.products) {
+        let productsData = JSON.parse(localStorage.getItem('products'));
+        this.$store.commit('toggleProductsState', productsData);
+        this.products = this.$store.getters.getProductsState;
+      }
     },
     toggleUserPopupState(value) {
       this.$store.commit("toggleUserPopupState", value)

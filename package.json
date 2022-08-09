@@ -14,6 +14,7 @@
     "core-js": "^3.8.3",
     "materialize": "^1.0.0",
     "vue": "^3.2.13",
+    "vue-carousel": "^0.18.0",
     "vue-router": "^4.0.3",
     "vuelidate": "^0.7.7",
     "vuex": "^4.0.0"
@@ -28,6 +29,8 @@
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
-    "vue-agile": "^2.0.0"
+    "vue-agile": "^2.0.0",
+    "vue-awesome-swiper": "^5.0.1",
+    "vue3-carousel": "^0.1.40"
   }
 }

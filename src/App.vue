@@ -17,6 +17,7 @@
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 18px;
+  padding-top: 137px;
 }
 .container {
   max-width: 1698px;
