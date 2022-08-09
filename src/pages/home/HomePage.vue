@@ -1,9 +1,9 @@
 <template>
   <home-top></home-top>
   <home-advantages></home-advantages>
-  <slider></slider>
+  <slider :title="'Новинки'" :slider-param="{firstActiveSlide: 1, lastActiveSlide: 4, slidesNumber: 4,}"></slider>
   <auction-slider></auction-slider>
-  <slider></slider>
+  <slider :title="'Рекомендуемые товары'"></slider>
   <home-mail></home-mail>
 </template>
 
